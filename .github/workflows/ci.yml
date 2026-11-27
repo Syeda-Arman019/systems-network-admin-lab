@@ -5,4 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run:  docker build -f docker/Dockerfile -t lab07-web .
+      - run: test -f app/index.html && test -f docker/Dockerfile
+      - run: test -s app/index.html
+      - run: docker build -f docker/Dockerfile -t lab07-web .
+
